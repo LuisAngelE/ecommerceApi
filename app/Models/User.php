@@ -31,6 +31,12 @@ class User extends Authenticatable
         return $this->morphOne(Image::class, 'imageable');
     }
 
+    // Relación: Un usuario pertenece a muchas direcciones
+    public function addresses()
+    {
+        return $this->hasMany(Addresses::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

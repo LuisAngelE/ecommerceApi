@@ -32,6 +32,7 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
+    
     public function down()
     {
         Schema::dropIfExists('users');
