@@ -26,7 +26,7 @@ class User extends Authenticatable
     }
 
     // Relación: Un usuario pertenece a una imagen
-    public function image()
+    public function images()
     {
         return $this->morphOne(Image::class, 'imageable');
     }
@@ -35,6 +35,12 @@ class User extends Authenticatable
     public function addresses()
     {
         return $this->hasMany(Addresses::class);
+    }
+
+    // Relación: un usuario tiene muchas reseñas
+    public function reviews()
+    {
+        return $this->hasMany(Reviews::class, 'user_id');
     }
 
     /**
