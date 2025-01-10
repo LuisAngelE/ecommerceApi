@@ -8,23 +8,12 @@ use Illuminate\Support\Facades\Validator;
 
 class CategoriesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
     public function index()
     {
         $categories = Categories::all();
         return response()->json($categories);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
-     */
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -47,24 +36,11 @@ class CategoriesController extends Controller
         ], 201);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Categories  $category
-     * @return \Illuminate\Http\JsonResponse
-     */
     public function show(Categories $category)
     {
         return response()->json($category);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Categories  $category
-     * @return \Illuminate\Http\JsonResponse
-     */
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
@@ -93,12 +69,6 @@ class CategoriesController extends Controller
         ], 200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Categories  $category
-     * @return \Illuminate\Http\JsonResponse
-     */
     public function destroy($id)
     {
         $category = Categories::find($id);

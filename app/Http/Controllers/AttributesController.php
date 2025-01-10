@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\carts;
+use App\Models\Attributes;
 use Illuminate\Http\Request;
 
-class CartsController extends Controller
+class AttributesController extends Controller
 {
     public function index()
     {
@@ -17,17 +17,17 @@ class CartsController extends Controller
         //
     }
 
-    public function show(carts $carts)
+    public function show(Attributes $attributes)
     {
         //
     }
 
-    public function update(Request $request, carts $carts)
+    public function update(Request $request, Attributes $attributes)
     {
         //
     }
 
-    public function destroy(carts $carts)
+    public function destroy(Attributes $attributes)
     {
         //
     }

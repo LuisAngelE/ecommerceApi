@@ -11,15 +11,19 @@ class Addresses extends Model
 
     // Los atributos que se pueden asignar masivamente
     protected $fillable = [
-        'user_id',
         'address_line_1',
         'address_line_2',
-        'city',
-        'state',
         'zip_code',
-        'country',
+        'colony',
+        'street_name',
+        'numero_int',
+        'numero_ext',
         'phone_number',
-        'is_default'
+        'is_default',
+        'user_id',
+        'state_id',
+        'municipality_id',
+
     ];
 
     /**
@@ -29,5 +33,15 @@ class Addresses extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function state()
+    {
+        return $this->belongsTo(states::class);
+    }
+
+    public function municipality()
+    {
+        return $this->belongsTo(municipalities::class);
     }
 }
