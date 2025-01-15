@@ -9,8 +9,10 @@ class states extends Model
 {
     use HasFactory;
 
+    protected $hidden = ['created_at', 'updated_at'];
+
     public function municipalities()
     {
-        return $this->hasMany(municipalities::class);
+        return $this->hasMany(municipalities::class, 'state_id');
     }
 }

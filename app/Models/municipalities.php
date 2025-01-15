@@ -9,6 +9,8 @@ class municipalities extends Model
 {
     use HasFactory;
 
+    protected $hidden = ['created_at', 'updated_at'];
+
     public function state()
     {
         return $this->belongsTo(states::class);
